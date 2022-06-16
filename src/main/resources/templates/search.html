@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>Tìm kiếm</title>
+    <link rel="stylesheet" th:href="@{/css/search.css}"/>
+</head>
+<body>
+<div class="header">
+<h1>TRA CỨU THÔNG TIN TUYỂN SINH</h1>
+<form th:action="@{/searchOne}" method="post">
+        <label>Họ tên</label>
+        <input type="text" th:name="fullname"  placeholder="Find name">
+        <label>Mã học sinh</label>
+        <input type="text" th:name="rollnumber" placeholder="Find roll number" >
+    <input th:type="submit" value="Tìm kiếm"  style="margin-left: 90px; margin-top: 10px;">
+</form>
+</div>
+<div class="container">
+<table>
+    <thead>
+    <tr>
+        <th>STT</th>
+        <th>Trường Tiểu Học</th>
+        <th>Quận/Huyện</th>
+        <th>Mã học sinh</th>
+        <th>Lớp</th>
+        <th>Họ và tên</th>
+        <th>Ngày</th>
+        <th>Tháng</th>
+        <th>Năm</th>
+        <th>Giới tính</th>
+        <th>Nơi sinh</th>
+        <th>Dân tộc</th>
+        <th>Hộ khẩu thường trú</th>
+        <th>Điện thoại liên hệ</th>
+        <th>Điểm lớp 1</th>
+        <th>Điểm lớp 2</th>
+        <th>Điểm lớp 3</th>
+        <th>Điểm lớp 4</th>
+        <th>Điểm lớp 5</th>
+        <th>Điểm tổng 5 năm</th>
+        <th>Điểm ưu tiên</th>
+        <th>Điểm cuối cùng</th>
+        <th>Ghi chú</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="students : ${listStudent}">
+        <td th:text="${students.stt}"></td>
+        <td th:text="${students.primarySchool}"></td>
+        <td th:text="${students.district}"></td>
+        <td th:text="${students.rollNumber}"></td>
+        <td th:text="${students.classStudent}"></td>
+        <td th:text="${students.name}"></td>
+        <td th:text="${students.day}"></td>
+        <td th:text="${students.month}"></td>
+        <td th:text="${students.year}"></td>
+        <td th:text="${students.gender}"></td>
+        <td th:text="${students.placeOfBirth}"></td>
+        <td th:text="${students.nation}"></td>
+        <td th:text="${students.permanentResidence}"></td>
+        <td th:text="${students.phoneNumber}"></td>
+        <td th:text="${students.grade1}"></td>
+        <td th:text="${students.grade2}"></td>
+        <td th:text="${students.grade3}"></td>
+        <td th:text="${students.grade4}"></td>
+        <td th:text="${students.grade5}"></td>
+        <td th:text="${students.gradeFinal}"></td>
+        <td th:text="${students.priorityPoint}"></td>
+        <td th:text="${students.totalPoint}"></td>
+        <td th:text="${students.note}"></td>
+    </tr>
+    </tbody>
+</table>
+</div>
+</body>
+</html>

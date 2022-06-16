@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>Tuyển sinh</title>
+    <link rel="stylesheet" th:href="@{/css/main.css}"/>
+</head>
+<body>
+<h1>TRA CỨU THÔNG TIN TUYỂN SINH</h1>
+<img th:src="@{images/ghtk.png}"/>
+<form th:action="@{/importFile}" method="post" enctype="multipart/form-data" modelAttribute="myFile">
+    <input type="file" th:name="files" class="yourBtn">
+    <input class="btn" th:type="submit" value="Import">
+</form>
+</body>
+</html>
